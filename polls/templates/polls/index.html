@@ -1,0 +1,17 @@
+{% if latest_question_list %}
+<meta charset="utf-8" />
+<style>
+.colortext {
+	color: green;
+}
+</style>
+    <ul>
+    {% for question in latest_question_list %}
+    <li><h3><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></h3>
+	    <i><span class="colortext">{{question.pub_date}}</span></i>
+    </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
