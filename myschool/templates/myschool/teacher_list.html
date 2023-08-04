@@ -1,0 +1,42 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Birthday</th>
+    <th>Experience</th>
+    <th>Salary</th>
+    <th>Education</th>
+  </tr>
+
+{% for teacher in teacher_list %}
+
+  <tr>
+    <td><a href="{% url 'myschool:teacher-detail' teacher.id %}">{{ teacher.person.name }}</a></td>
+    <td>{{ teacher.person.surname }}</td>
+    <td>{{ teacher.person.birth_date }}</td>
+    <td>{{ teacher.experience }}</td>
+    <td>{{ teacher.salary }}</td>
+    <td>{{ teacher.education }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

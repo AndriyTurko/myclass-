@@ -1,0 +1,44 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Surname</th> 
+    <th>Birthday</th>
+    <th>Region</th>
+    <th>Town</th>
+    <th>Street</th>
+    <th>Number</th>
+  </tr>
+
+{% for person in person_list %}
+
+  <tr>
+    <td>{{ person.name }}</td>
+    <td>{{ person.surname }}</td> 
+    <td>{{ person.birth_date }}</td>
+    <td>{{ person.address.region }}</td>
+    <td>{{ person.address.town }}</td>
+    <td>{{ person.address.street }}</td>
+    <td>{{ person.address.number }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>

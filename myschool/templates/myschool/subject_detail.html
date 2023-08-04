@@ -1,0 +1,43 @@
+<h2>Subject</h2>
+<div>Name: {{ object.name }}</div>
+<div>Description: {{ object.description }}</div>
+<div>Hours: {{ object.hours }}</div>
+<div>Teacher: {{ teacher_name }} 111111 {{ teacher_surname }}</div>
+<div>Teacher:<a href="{% url 'myschool:teacher-detail' object.teacher.id %}">{{ object.teacher.person.name }}</a></div>
+
+
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Hours</th>
+    <th>Teacher</th>
+  </tr>
+
+  <tr>
+    <td>{{ object.name }}</td>
+    <td>{{ object.description }}</td>
+    <td>{{ object.hours }}</td>
+    <td><a href="{% url 'myschool:teacher-detail' object.teacher.id %}">{{ object.teacher.person.name }}</a></td>
+  </tr>
+</table>
+
+</body>
+</html>
