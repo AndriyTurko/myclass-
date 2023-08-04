@@ -43,3 +43,17 @@ class Subject(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Grade(models.Model):
+    grade = models.CharField(max_length=4)
+    spec = models.CharField(max_length=30)
+    floor = models.IntegerField(default=1)
+    room = models.IntegerField()
+
+
+
+class Puple(models.Model):
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
