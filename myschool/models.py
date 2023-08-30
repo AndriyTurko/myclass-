@@ -52,8 +52,14 @@ class Grade(models.Model):
     floor = models.IntegerField(default=1)
     room = models.IntegerField()
 
+    def __str__(self):
+        return self.grade
+
 
 
 class Puple(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.person) + ' ' + str(self.grade)
