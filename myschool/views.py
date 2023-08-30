@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 from django.views import generic
-from myschool.models import Person, Address, Teacher, Subject
+from myschool.models import Person, Address, Teacher, Subject, Grade, Puple
 
 
 class PersonListView(generic.ListView):
@@ -54,3 +54,18 @@ class TeacherDetailView(generic.DetailView):
         print('2222222222', context)
         return context
 """
+
+class GradeListView(generic.ListView):
+    model = Grade
+
+
+class GradeDetailView(generic.DetailView):
+    model = Grade
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        puple_list = Puple.objects.filter(grade=self.object)
+        context.update({
+            'puple_list': puple_list,
+        })
+        return context

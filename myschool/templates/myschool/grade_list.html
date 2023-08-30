@@ -1,0 +1,38 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Class Name </th>
+    <th>Spec</th>
+    <th>Floor</th>
+    <th>Room</th>
+  </tr>
+
+{% for grade in grade_list %}
+
+  <tr>
+    <td>{{ grade.grade }}</td>
+    <td>{{ grade.spec }}</td>
+    <td>{{ grade.floor }}</td>
+    <td>{{ grade.room }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
