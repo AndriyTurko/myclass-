@@ -69,3 +69,11 @@ class GradeDetailView(generic.DetailView):
             'puple_list': puple_list,
         })
         return context
+
+
+class PupleListView(generic.ListView):
+    model = Puple
+
+
+class PupleDetailView(generic.DetailView):
+    model = Puple

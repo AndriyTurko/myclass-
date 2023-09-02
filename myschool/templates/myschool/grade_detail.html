@@ -28,7 +28,7 @@ tr:nth-child(even) {
     <td>{{ object.spec }}</td>
     <td>{{ object.floor }}</td>
     <td>{{ object.room }}</td>
-    {# <td><a href="{% url 'myschool:teacher-detail' object.teacher.id %}">{{ object.teacher.person.name }}</a></td> #}
+    {# <td><a href="{% url 'myschool:grade-detail' object.grade.id %}">{{ x }}</a></td> #}
   </tr>
 </table>
 
@@ -39,7 +39,7 @@ tr:nth-child(even) {
 
 	{% for x in puple_list %}
 	<tr>
-		<th>{{ x }}</th>
+		<th><a href="{% url 'myschool:puple-detail' object.puple.id %}">{{ x }}</a></th>
 	</tr>
 	{% endfor %}
 </table>
