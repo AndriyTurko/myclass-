@@ -37,9 +37,9 @@ tr:nth-child(even) {
 		<th>Puple</th>
 	</tr>
 
-	{% for x in puple_list %}
+	{% for puple in puple_list %}
 	<tr>
-		<th><a href="{% url 'myschool:puple-detail' object.puple.id %}">{{ x }}</a></th>
+		<th><a href="{% url 'myschool:puple-detail' puple.id %}">{{ puple }}</a></th>
 	</tr>
 	{% endfor %}
 </table>

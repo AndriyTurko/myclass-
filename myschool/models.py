@@ -47,7 +47,7 @@ class Subject(models.Model):
 
 
 class Grade(models.Model):
-    grade = models.CharField(max_length=4)
+    grade = models.CharField(max_length=4, unique=True)
     spec = models.CharField(max_length=30)
     floor = models.IntegerField(default=1)
     room = models.IntegerField()
@@ -58,7 +58,7 @@ class Grade(models.Model):
 
 
 class Puple(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, unique=True)
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
 
     def __str__(self):
