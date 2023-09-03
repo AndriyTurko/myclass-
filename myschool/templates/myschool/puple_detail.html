@@ -1,0 +1,52 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Puple Name</th>
+    <th>Grade</th>
+    <th>Spec</th>
+    <th>Floor</th>
+    <th>Room</th>
+  </tr>
+
+  <tr>
+	  <td>{{ object.person.name }}{{ object.person.surname }}</td>
+    <td>{{ object.grade.grade }}</td>
+    <td>{{ object.grade.spec }}</td>
+    <td>{{ object.grade.floor }}</td>
+    <td>{{ object.grade.room }}</td>
+    {# <td><a href="{% url 'myschool:teacher-detail' object.teacher.id %}">{{ object.teacher.person.name }}</a></td> #}
+  </tr>
+</table>
+
+<table>
+        <tr>
+                <th>Puple</th>
+        </tr>
+
+        {% for x in puple_list %}
+        <tr>
+                <th>{{ x }}</th>
+        </tr>
+        {% endfor %}
+</table>
+
+
+
+</body>
+</html>
