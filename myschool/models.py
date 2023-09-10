@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinLengthValidator
 
 # Create your models here.
 
@@ -15,8 +16,8 @@ class Address(models.Model):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=30)
-    surname = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, validators=[MinLengthValidator(3)])
+    surname = models.CharField(max_length=30, validators=[MinLengthValidator(3)])
     birth_date = models.DateField()
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
