@@ -14,6 +14,8 @@ class Address(models.Model):
     def __str__(self):
         return self.town + " " + self.street + ' ' + self.number
 
+    def get_absolute_url(self):
+        return '/myschool/address/' + str(self.pk)
 
 class Person(models.Model):
     name = models.CharField(max_length=30, validators=[MinLengthValidator(3)])
@@ -23,6 +25,9 @@ class Person(models.Model):
 
     def __str__(self):
         return self.name + ' ' + self.surname
+
+    def get_absolute_url(self):
+        return '/myschool/person/'
 
 
 class Teacher(models.Model):
@@ -45,6 +50,9 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return '/myschool/subject/' + str(self.pk) 
+
 
 
 class Grade(models.Model):
@@ -64,3 +72,4 @@ class Puple(models.Model):
 
     def __str__(self):
         return str(self.person) + ' ' + str(self.grade)
+

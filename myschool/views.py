@@ -7,6 +7,15 @@ from myschool.models import Person, Address, Teacher, Subject, Grade, Puple
 
 class PersonListView(generic.ListView):
     model = Person
+
+
+class PersonDetailView(generic.DetailView):
+    model = Person
+
+
+class PersonCreateView(generic.edit.CreateView):
+    model = Person
+    fields = '__all__'
     
 
 """
@@ -39,6 +48,9 @@ class SubjectDetailView(generic.DetailView):
 class SubjectListView(generic.ListView):
     model = Subject
     
+class SubjectCreateView(generic.edit.CreateView):
+    model = Subject
+    fields = '__all__'
 
 
 class TeacherDetailView(generic.DetailView):
@@ -77,3 +89,27 @@ class PupleListView(generic.ListView):
 
 class PupleDetailView(generic.DetailView):
     model = Puple
+
+
+class AddressListView(generic.ListView):
+    model = Address
+
+class AddressDetailView(generic.DetailView):
+    model = Address
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        person_list = Person.objects.filter(address=self.object)
+        context.update({
+            'person_list': person_list,
+        })
+        return context
+
+
+class MyschoolListView(generic.TemplateView):
+    pass
+
+
+class AddressCreateView(generic.edit.CreateView):
+    model = Address
+    fields = ['country', 'region', 'town', 'street', 'number']

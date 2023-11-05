@@ -1,0 +1,53 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Country</th>
+    <th>Region</th>
+    <th>Town</th>
+    <th>Street</th>
+    <th>Number</th>
+  </tr>
+
+  <tr>
+    <td>{{ object.country }}</td>
+    <td>{{ object.region }}</td>
+    <td>{{ object.town }}</td>
+    <td>{{ object.street }}</td>
+    <td>{{ object.number }}</td>
+  </tr>
+</table>
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>Birth date</th>
+	</tr>
+{% for person in person_list %}
+	<tr>
+		<td>{{ person.name }}</td>
+		<td>{{ person.surname }}</td>
+		<td>{{ person.birth_date }}</td>
+	</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
