@@ -36,12 +36,10 @@ class SubjectDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print('11111111111', context)
         context.update({
             'teacher_name': self.object.teacher.person.name,
             'teacher_surname': self.object.teacher.person.surname
         })
-        print('2222222222', context, self.object.teacher.person.surname)
         return context
 
 
