@@ -27,7 +27,7 @@ class Person(models.Model):
         return self.name + ' ' + self.surname
 
     def get_absolute_url(self):
-        return '/myschool/person/'
+        return '/myschool/person/' + str(self.pk)
 
 
 class Teacher(models.Model):
