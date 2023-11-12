@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Person list</th>
+    <th>Address list</th>
+    <th>Grade list</th>
+    <th>Puple list</th>
+    <th>Teacher list</th>
+    <th>Subject list</th>
+  </tr>
+
+
+  <tr>
+    <td><a href="{% url 'myschool:person-list'  %}">Person list</a></td>
+    <td><a href="{% url 'myschool:address-list'  %}">Address list</a></td>
+    <td><a href="{% url 'myschool:grade-list'  %}">Grade list</a></td>
+    <td><a href="{% url 'myschool:puple-list'  %}">Puple list</a></td>
+    <td><a href="{% url 'myschool:teacher-list'  %}">Teacher list</a></td>
+    <td><a href="{% url 'myschool:subject-list'  %}">Subject list</a></td>
+  </tr>
+</table>
+
+</body>
+</html>

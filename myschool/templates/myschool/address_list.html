@@ -1,0 +1,43 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+<div>
+  <table style="width:100%">
+    <tr>
+      <th>Country</th>
+      <th>Region</th>
+      <th>Town</th>
+      <th>Link</th>
+    </tr>
+
+{% for address in address_list %}
+
+    <tr>
+      <td>{{ address.country }}</td>
+      <td>{{ address.region }}</td>
+      <td>{{ address.town }}</td>
+      <td><a href="{% url 'myschool:address-detail' address.id %}">Link</a></td>
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+<div>
+	<a href="{% url 'myschool:address-create' %}">Link to create</a>
+	</div>
+
+</body>
+</html>
