@@ -1,8 +1,13 @@
 Hello
+## PROJECT INSTALLIATION
 
+
+
+## NEW PAGE CREATION
 
 First step:
 added new register in admin.py
+
 
 Second step:
 added new class in models.py for our new model
@@ -24,3 +29,7 @@ if everything is correct, we do makemigrations and migrate to save the code to t
 
 Eight and last step:
 when we have completed everything and everything works, we make a PR, i.e. a Pull Request in Git Hub so that other people canwork with our code further
+
+
+
+
