@@ -22,10 +22,10 @@ Fifth step:
 we go to the template folder and create a file with the name we need and already write the HTML code and everything else in it
 
 Sixth step:
-run our code and check if everything works
+if everything is correct, we do makemigrations and migrate to save the code to the database
 
 Seventh step:
-if everything is correct, we do makemigrations and migrate to save the code to the database
+run our code and check if everything works
 
 Eight and last step:
 when we have completed everything and everything works, we make a PR, i.e. a Pull Request in Git Hub so that other people canwork with our code further
