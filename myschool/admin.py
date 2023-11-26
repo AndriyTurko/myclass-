@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from myschool.models import Person, Address, Teacher, Subject, Grade, Puple
+from myschool.models import Person, Address, Teacher, Subject, Grade, Puple, Mark
 
 
 admin.site.register(Person)
@@ -11,4 +11,5 @@ admin.site.register(Teacher)
 admin.site.register(Subject)
 admin.site.register(Grade)
 admin.site.register(Puple)
+admin.site.register(Mark)
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 from django.views import generic
-from myschool.models import Person, Address, Teacher, Subject, Grade, Puple
+from myschool.models import Person, Address, Teacher, Subject, Grade, Puple, Mark
 
 
 class PersonListView(generic.ListView):
@@ -111,3 +111,7 @@ class MyschoolListView(generic.TemplateView):
 class AddressCreateView(generic.edit.CreateView):
     model = Address
     fields = ['country', 'region', 'town', 'street', 'number']
+
+
+class MarkListView(generic.ListView):
+    model = Mark
