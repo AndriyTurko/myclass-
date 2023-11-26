@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
@@ -67,9 +68,18 @@ class Grade(models.Model):
 
 
 class Puple(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE, unique=True)
+    person = models.ForeignKey(Person, on_delete=models.CASCADE)
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.person) + ' ' + str(self.grade)
 
+
+class Mark(models.Model):
+    puple = models.ForeignKey(Puple, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    mark = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(12)])
+
+    def __str__(self):
+        return str(self.puple) + ' ' + str(self.subject)

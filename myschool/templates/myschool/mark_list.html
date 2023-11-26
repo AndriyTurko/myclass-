@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Pupil</th>
+    <th>Teacher</th>
+    <th>Subject</th>
+    <th>Mark</th>
+  </tr>
+
+{% for mark in mark_list %}
+
+  <tr>
+    <td>{{ mark.puple.person.name }}</td>
+    <td>{{ mark.teacher.person.name }}</td>
+    <td>{{ mark.subject.name }}</td>
+    <td>{{ mark.mark }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
+~                                                                                                                      
+~                                                                                                    
+
