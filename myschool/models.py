@@ -83,3 +83,6 @@ class Mark(models.Model):
 
     def __str__(self):
         return str(self.puple) + ' ' + str(self.subject)
+
+    def get_absolute_url(self):
+        return '/myschool/mark/' + str(self.pk)
