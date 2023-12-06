@@ -115,3 +115,7 @@ class AddressCreateView(generic.edit.CreateView):
 
 class MarkListView(generic.ListView):
     model = Mark
+
+class MarkCreateView(generic.edit.CreateView):
+    model = Mark
+    fields = '__all__'
