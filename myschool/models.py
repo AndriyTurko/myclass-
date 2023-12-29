@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MinLengthValidator
 from django.core.validators import MinValueValidator, MaxValueValidator
 
@@ -19,16 +20,23 @@ class Address(models.Model):
         return '/myschool/address/' + str(self.pk)
 
 class Person(models.Model):
-    name = models.CharField(max_length=30, validators=[MinLengthValidator(3)])
-    surname = models.CharField(max_length=30, validators=[MinLengthValidator(3)])
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField()
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name + ' ' + self.surname
+        return self.user.first_name + ' ' + self.user.last_name 
 
     def get_absolute_url(self):
         return '/myschool/person/' + str(self.pk)
+
+    @property 
+    def name(self):
+        return self.user.first_name
+
+    @property
+    def surname(self):
+        return self.user.last_name
 
 
 class Teacher(models.Model):
@@ -38,8 +46,7 @@ class Teacher(models.Model):
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.education + ' ' + self.experience
-
+        return self.person.name + ' ' + self.person.surname
 
 
 class Subject(models.Model):
