@@ -88,6 +88,14 @@ class PupleListView(generic.ListView):
 class PupleDetailView(generic.DetailView):
     model = Puple
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        mark_list = Mark.objects.filter(puple=self.object)
+        context.update({
+            'mark_list': mark_list,
+        })
+        return context
+
 
 class AddressListView(generic.ListView):
     model = Address
@@ -119,3 +127,14 @@ class MarkListView(generic.ListView):
 class MarkCreateView(generic.edit.CreateView):
     model = Mark
     fields = '__all__'
+
+class MarkDetailView(generic.DetailView):
+    model = Mark
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        puple_list = Puple.objects.filter(mark=self.object)
+        context.update({
+            'puple_list': puple_list,
+        })
+        return context

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from myschool.views import MarkCreateView, MarkListView, SubjectCreateView, PersonCreateView, AddressCreateView, PersonDetailView, PersonListView, TeacherListView, SubjectDetailView, SubjectListView, TeacherDetailView, GradeDetailView, GradeListView, PupleDetailView, PupleListView, AddressListView, AddressDetailView, MyschoolListView
+from myschool.views import MarkDetailView, MarkCreateView, MarkListView, SubjectCreateView, PersonCreateView, AddressCreateView, PersonDetailView, PersonListView, TeacherListView, SubjectDetailView, SubjectListView, TeacherDetailView, GradeDetailView, GradeListView, PupleDetailView, PupleListView, AddressListView, AddressDetailView, MyschoolListView
 
 urlpatterns = [
     path("", MyschoolListView.as_view(template_name='myschool/myschool_list.html'), name="myschool-list"),
@@ -20,6 +20,7 @@ urlpatterns = [
     path('address/create/', AddressCreateView.as_view(), name='address-create'),
     path('address/<pk>/', AddressDetailView.as_view(), name='address-detail'),
     path('mark/', MarkListView.as_view(), name='mark-list'),
+    path('mark/<pk>/', MarkDetailView.as_view(), name='mark-detail'),
     path('mark/create/', MarkCreateView.as_view(), name='mark-create'),
 ]
 

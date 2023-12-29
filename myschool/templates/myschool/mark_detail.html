@@ -1,0 +1,34 @@
+<html>
+<head>
+<style>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+</style>
+</head>
+
+<body>
+
+<table style="width:100%">
+  <tr>
+    <th>Puple Name</th>
+    <th>Teacher Name</th>
+    <th>Subject Nmae</th>
+    <th>Mark</th>
+  </tr>
+
+  <tr>
+    <td>{{ object.puple.person.name }}</td>
+    <td>{{ object.teacher.person.name }}</td>
+    <td>{{ object.subject.name }}</td>
+    <td>{{ object.mark }}</td>
+  </tr>
+</table>
+</body>
+</html>

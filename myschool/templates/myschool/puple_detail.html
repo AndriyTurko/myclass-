@@ -36,12 +36,16 @@ tr:nth-child(even) {
 
 <table>
         <tr>
-                <th>Puple</th>
+                <th>Teacher</th>
+		<th>Subject</th>
+		<th>Mark</th>
         </tr>
 
-        {% for x in puple_list %}
+        {% for x in mark_list %}
         <tr>
-                <th>{{ x }}</th>
+                <th>{{ x.teacher }}</th>
+		<th>{{ x.subject }}</th>
+		<th>{{ x.mark }}</th>
         </tr>
         {% endfor %}
 </table>
