@@ -1,0 +1,24 @@
+<html lang="en">
+{#<head>#}
+{#    <title>{% block title %}My amazing site{% endblock %}</title>#}
+{#</head>#}
+
+<body>
+<div style="text-align: right;"><a href="/login/">login page</a></div>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="/polls/">Polls</a></li>
+            <li><a href="/myschool/">Myschool</a></li>
+            <li><a href="/admin/">Admin</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+<h1>myschool project</h1>
+</body>
+</html>
+

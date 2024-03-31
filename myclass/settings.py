@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-0b2^xi5o1+zh4178njg(a-m25c6yuqn(2s@7pby85g!$xgeub)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.201.233.227']
+ALLOWED_HOSTS = ['52.201.233.227', '127.0.0.1']
 
 
 # Application definition
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'myclass.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,9 +79,9 @@ WSGI_APPLICATION = 'myclass.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myclass',
-        'USER': 'class_admin',
-        'PASSWORD': '8910989',
+        'NAME': 'django_school2',
+        'USER': 'andriy',
+        'PASSWORD': 'andriy1',
         'HOST': 'localhost'
     }
 }
@@ -103,6 +104,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+LOGIN_REDIRECT_URL = '/myschool'
 
 
 # Internationalization
@@ -128,3 +131,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
