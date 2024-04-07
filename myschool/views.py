@@ -3,10 +3,12 @@ from django.http import HttpResponse
 # Create your views here.
 from django.views import generic
 from myschool.models import Person, Address, Teacher, Subject, Grade, Puple, Mark
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class PersonListView(generic.ListView):
+class PersonListView(LoginRequiredMixin, generic.ListView):
     model = Person
+    redirect_field_name = ("/login")
 
 
 class PersonDetailView(generic.DetailView):
