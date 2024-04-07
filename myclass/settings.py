@@ -107,6 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LOGIN_REDIRECT_URL = '/myschool'
 
+LOGOUT_REDIRECT_URL = '/myschool'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

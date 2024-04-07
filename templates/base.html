@@ -1,10 +1,17 @@
 <html lang="en">
-{#<head>#}
-{#    <title>{% block title %}My amazing site{% endblock %}</title>#}
-{#</head>#}
-
-<body>
-<div style="text-align: right;"><a href="/login/">login page</a></div>
+<head>
+    <title>My class project</title>
+    <div style="text-align: right">
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.get_username }}. Thanks for logging in.</p>
+            <a href="/logout/"><p>Logout</p></a>
+        {% else %}
+            <a href="/login/"><p>Welcome, new user. Please log in.</p></a>
+        {% endif %}
+        {% if user.is_superuser %}
+            <a href="/admin/"><p>Admin</p></a>
+        {% endif %}
+    </div>
     <div id="sidebar">
         {% block sidebar %}
         <ul>
@@ -14,6 +21,12 @@
         </ul>
         {% endblock %}
     </div>
+</head>
+
+<body>
+
+{#<div style="text-align: right;"><a href="/login/">login page</a></div>#}
+
 
     <div id="content">
         {% block content %}{% endblock %}
