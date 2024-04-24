@@ -7,7 +7,9 @@ ssh -i test_3.pem ec2-user@100.24.59.247
 
 2. create project folder:
 mkdir file_name
+```
 cd file_name
+```
 
 3. install the python 3(if it is not installed)
 
@@ -32,10 +34,40 @@ source p_venv/bin/activate
 
 10. cd myclass-/
 
-11. install all python packages from requirements.txt
+11. install mysql
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+sudo yum localinstall -y mysql57-community-release-el7-8.noarch.rpm
+sudo yum install -y mysql-community-server
+
+sudo systemctl start mysqld 
+sudo systemctl enable mysqld 
+
+
+12. Get the password for the root user:
+sudo grep 'temporary password' /var/log/mysqld.log
+enter DB with password
+mysql -u root -p
+
+You have to change the root user's password before you can do anything, so run the following command to do that:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00tr00t!';
+
+reenter mysql with new password
+create new DB for our project
+create database DB_name;
+
+create new user and grant all previlegies for DB
+GRANT ALL PRIVILEGES ON myclass.* To 'admin'@'localhost' IDENTIFIED BY 'Adm1nadm!n';
+
+13. install additional packages on linux
+sudo dnf install gcc mysql-devel python3-devel
+
+14. install all python packages from requirements.txt
 pip install -r requirements.txt
 
+15. write in settings.py password, user_name, etc 
 
+16.python manage.py migrate
 
 ## NEW PAGE CREATION
 
