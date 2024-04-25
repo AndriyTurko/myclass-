@@ -10,14 +10,14 @@ ssh -i test_3.pem ec2-user@100.24.59.247
 2. Create project folder:
 ```
 mkdir file_name
+```
+```
 cd file_name
 ```
 
-3. Install the _python3_
-> (if it is not installed)
+3. Install the _python3_ (if it is not installed)
 
-4. Install the _GIT_:
-> (if it is not installed)
+4. Install the _GIT_ (if it is not installed):
 ```
 sudo yum install git
 ```
@@ -28,14 +28,12 @@ sudo yum install git
 git clone https://github.com/AndriyTurko/myclass-.git
 ```
 
-6. Install _pip3_:
-> (if it not installed)
+6. Install _pip3_ (if it not installed):
 ```
 sudo yum install python3-pip
 ```
 
-7. Install _virtualenv_:
-> (if it not installed)
+7. Install _virtualenv_ (if it not installed):
 ```
 pip3 install virtualenv
 ```
@@ -71,28 +69,28 @@ enter DB with password
 mysql -u root -p
 ```
 
-    * You have to change the root user's password before you can do anything, so run the following command to do that:
-```
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00tr00t!';
-```
+	* You have to change the root user's password before you can do anything, so run the following command to do that:
+	```
+	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00tr00t!';
+	```
 
-    * Reenter `mysql` with new password:
-```
-create new DB for our project
-create database DB_name;
-```
+	* Reenter `mysql` with new password:
+	```
+	create new DB for our project
+	create database DB_name;
+	```
 
-    * Create new user and grant all previlegies for DB:
-```
-GRANT ALL PRIVILEGES ON myclass.* To 'admin'@'localhost' IDENTIFIED BY 'Adm1nadm!n';
-```
+	* Create new user and grant all previlegies for DB:
+	```
+	GRANT ALL PRIVILEGES ON myclass.* To 'admin'@'localhost' IDENTIFIED BY 'Adm1nadm!n';
+	```
 
-13. Install additional packages on _linux_
+13. Install additional packages on _linux_:
 ```
 sudo dnf install gcc mysql-devel python3-devel
 ```
 
-14. Install all python packages from `requirements.txt`
+14. Install all python packages from `requirements.txt`:
 ```
 pip install -r requirements.txt
 ```
