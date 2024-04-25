@@ -69,21 +69,21 @@ enter DB with password
 mysql -u root -p
 ```
 
-	* You have to change the root user's password before you can do anything, so run the following command to do that:
-	```
-	ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00tr00t!';
-	```
+* You have to change the root user's password before you can do anything, so run the following command to do that:
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00tr00t!';
+```
 
-	* Reenter `mysql` with new password:
-	```
-	create new DB for our project
-	create database DB_name;
-	```
+* Reenter `mysql` with new password:
+```
+create new DB for our project
+create database DB_name;
+```
 
-	* Create new user and grant all previlegies for DB:
-	```
-	GRANT ALL PRIVILEGES ON myclass.* To 'admin'@'localhost' IDENTIFIED BY 'Adm1nadm!n';
-	```
+* Create new user and grant all previlegies for DB:
+```
+GRANT ALL PRIVILEGES ON myclass.* To 'admin'@'localhost' IDENTIFIED BY 'Adm1nadm!n';
+```
 
 13. Install additional packages on _linux_:
 ```
